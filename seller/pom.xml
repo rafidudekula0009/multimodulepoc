@@ -72,6 +72,11 @@
 			<version>2.1</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.org.example</groupId>
+			<artifactId>util</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<repositories>
