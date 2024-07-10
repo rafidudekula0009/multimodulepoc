@@ -21,7 +21,7 @@ public class HelloController {
 	 String REST_URI_CONTAINER="http://host.docker.internal:8080/seller/help/";
 	 
 	 // http://localhost:8080/dealer/hello_with_localhost/rafi
-	@RequestMapping(value="/hello_with_localhost/{name}", method=RequestMethod.GET, produces="text/plain")
+	@RequestMapping(value="/contact_seller_with_localhost/{name}", method=RequestMethod.GET, produces="text/plain")
 	@ResponseBody
 	public String getHelloMsg(HttpServletResponse response, @PathVariable("name") String name) throws IOException{
 		System.out.println("dealer getHelloMsg for localhost invoked!!!!!");
@@ -31,7 +31,7 @@ public class HelloController {
 		return resp;
 	}
 	
-	@RequestMapping(value="/hello_with_docker_host/{name}", method=RequestMethod.GET, produces="text/plain")
+	@RequestMapping(value="/contact_seller_with_docker_host/{name}", method=RequestMethod.GET, produces="text/plain")
 	@ResponseBody
 	public String getHelloMsg1(HttpServletResponse response, @PathVariable("name") String name) throws IOException{
 		System.out.println("dealer getHelloMsg1 for docker(host.docker.internal) invoked!!!!!");
