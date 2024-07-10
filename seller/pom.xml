@@ -131,6 +131,15 @@
 					<target>${java.version}</target>
 				</configuration>
 			</plugin>
+			
+			<!--It will deploy or place the war file generated when we run maven clean install to this location mentioned in outputDirectory-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<outputDirectory>C:/Softwares/apache-tomcat-9.0.89/webapps</outputDirectory>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 </project>

@@ -7,8 +7,8 @@
      <!-- this is consider by framework -->
     <persistence-unit name="SalesDB">
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://all-mysql:3306/sales?createDatabaseIfNotExist=true" />
-            <!-- <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sales?createDatabaseIfNotExist=true&amp;allowPublicKeyRetrieval=true&amp;useSSL=False" /> -->
+            <!-- <property name="javax.persistence.jdbc.url" value="jdbc:mysql://all-mysql:3306/sales?createDatabaseIfNotExist=true" /> -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sales?createDatabaseIfNotExist=true&amp;allowPublicKeyRetrieval=true&amp;useSSL=False" />
             <property name="javax.persistence.jdbc.user" value="root" />
             <property name="javax.persistence.jdbc.password" value="password" />
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
