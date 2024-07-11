@@ -2,11 +2,8 @@ package org.dealer.controller;
 
 import java.io.IOException;
 import java.text.MessageFormat;
-import java.util.Map;
 
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.text.View;
 
 import org.dealer.view.generator.MyPlainHtmlView;
 import org.springframework.http.MediaType;
@@ -55,22 +52,21 @@ public class HelloController {
 
 		String uri = MessageFormat.format(REST_URI_REGISTER_CUST, name, email, address);
 		String resp = rest.getForObject(uri, String.class);
-		
+
 		return new ModelAndView(new MyPlainHtmlView(resp));
 	}
 
-	@RequestMapping(value = "/seller_request/register_customer_with_docker/{name}/{email}/{address}", method = RequestMethod.GET, produces = "text/plain")
+	@RequestMapping(value = "/seller_request/register_customer_with_docker/{name}/{email}/{address}", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
 	@ResponseBody
-	public String registerCustWithDockerHost(HttpServletResponse response, @PathVariable("name") String name,
+	public ModelAndView registerCustWithDockerHost(HttpServletResponse response, @PathVariable("name") String name,
 			@PathVariable("email") String email, @PathVariable("address") String address) throws IOException {
 
 		System.out.println("dealer registerCustWithDockerHost for docker(host.docker.internal) invoked!!!!!");
 		System.out.println("message formatted to => " + MessageFormat.format(REST_URI_CONTAINER, name, email, address));
 
 		String uri = MessageFormat.format(REST_URI_CONTAINER_REGISTER_CUST, name, email, address);
-		String resp = rest.getForObject(uri,
+		String resp = rest.getForObject(uri, String.class);
 
-				String.class);
-		return resp;
+		return new ModelAndView(new MyPlainHtmlView(resp));
 	}
 }
