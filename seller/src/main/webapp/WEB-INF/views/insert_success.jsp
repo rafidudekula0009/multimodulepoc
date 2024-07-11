@@ -8,6 +8,6 @@
         <title>Home</title>
     </head>
     <body>
-        <h1>Customer Registered!!</h1>
+        <h1>Response from seller. Customer Registered!!</h1>
     </body>
 </html>
