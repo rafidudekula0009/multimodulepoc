@@ -47,9 +47,12 @@ public class HelloController {
 	@ResponseBody
 	public ModelAndView registerCustWithLocalHost(HttpServletResponse response, @PathVariable("name") String name,
 			@PathVariable("email") String email, @PathVariable("address") String address) throws IOException {
-		System.out.println("dealer registerCustWithLocalHost for docker(host.docker.internal) invoked!!!!!");
-		System.out.println("message formatted to => " + MessageFormat.format(REST_URI_CONTAINER, name, email, address));
+		System.out.println("dealer registerCustWithLocalHost for localhost invoked!!!!!");
+		System.out.println("uri=> "+REST_URI_REGISTER_CUST+"message formatted to => " + MessageFormat.format(REST_URI_CONTAINER, name, email, address));
+		
+		System.out.println("uri=> "+REST_URI_REGISTER_CUST+"manually formatted to => " + "http://localhost:8080/seller/help/register_customer/"+ name+"/"+ email+"/"+ address);
 
+		//By using MessageFormat it will replace the localhost with docker host name (http://host.docker.internal:8080/seller/help)
 		String uri = MessageFormat.format(REST_URI_REGISTER_CUST, name, email, address);
 		String resp = rest.getForObject(uri, String.class);
 
