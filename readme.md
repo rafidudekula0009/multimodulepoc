@@ -10,7 +10,7 @@ Module Creation
 1. Right click on the parent project (businessplatfrm) -> New -> Maven Module
 2. Select Parent as businessplatfrm, provide name for your module (dealer/seller)
 3. Select archetype as spring-mvc and click on Finish and your module will be created and respective 
-   conf in the parent pom will be added as below
+   conf in the parent pom will be added as below.
    
   
             
@@ -24,6 +24,8 @@ Module Creation
       
   </modules>
   
+  Note: 
+  Add this at the root level in the pom.xml of parent if it is not available. Intellij IDE will add it automatically but eclipse won't
   
  Use one module in other module
   
@@ -43,6 +45,7 @@ Note:
 
 Util module is created using intellij IDE. right click on parent proj -> New -> Module
 It won't create any web.xml nothing. You need to add it if you want to generate war file
+groupId, artifactId, versions are available in util module's pom.xml as <parent> section
 
 
 Build & Run the Docker Image
